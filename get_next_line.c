@@ -6,7 +6,7 @@
 /*   By: rozhou <rozhou@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 13:40:46 by rozhou            #+#    #+#             */
-/*   Updated: 2020/12/14 10:06:09 by rozhou           ###   ########lyon.fr   */
+/*   Updated: 2020/12/14 10:49:02 by rozhou           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int			get_next_line(int fd, char **line)
 	static char	*mem;
 
 	ret = 0;
-	if (fd < 0 || BUFFER_SIZE < 1 || !line || read(fd, buf, 0) < 0)
+	if (fd < 0 || !line || BUFFER_SIZE < 1 || read(fd, buf, 0) < 0)
 		return (-1);
 	if (!mem && !(mem = ft_calloc(1, sizeof(char *))))
 		return (-1);
