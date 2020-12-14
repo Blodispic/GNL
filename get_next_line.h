@@ -6,7 +6,7 @@
 /*   By: rozhou <rozhou@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 13:42:54 by rozhou            #+#    #+#             */
-/*   Updated: 2020/12/11 15:21:27 by rozhou           ###   ########lyon.fr   */
+/*   Updated: 2020/12/14 09:42:12 by rozhou           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include "sys/types.h"
-# include "sys/stat.h"
-# include "fcntl.h"
 
 size_t			ft_strlen(const char *str);
 char			*ft_strjoin(char *s1, char *s2);
 char			*ft_substr(char *s, unsigned int start, size_t len);
+char			*ft_substrfree(char *s, unsigned int start, size_t len);
 void			*ft_calloc(size_t count, size_t size);
 int				get_next_line(int fd, char **line);
 

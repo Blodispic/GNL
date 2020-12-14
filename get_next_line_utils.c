@@ -6,7 +6,7 @@
 /*   By: rozhou <rozhou@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 13:51:57 by rozhou            #+#    #+#             */
-/*   Updated: 2020/12/11 15:13:19 by rozhou           ###   ########lyon.fr   */
+/*   Updated: 2020/12/14 08:40:47 by rozhou           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,34 @@ char			*ft_substr(char *s, unsigned int start, size_t len)
 	while (s[++i + start] && i != (unsigned int)len)
 		s2[i] = s[i + start];
 	s2[i] = '\0';
+	return (s2);
+}
+
+char			*ft_substrfree(char *s, unsigned int start, size_t len)
+{
+	unsigned int	i;
+	char			*s2;
+
+	if (!s)
+		return (0);
+	if (start >= ft_strlen(s))
+	{
+		if (!(s2 = malloc(ft_strlen(s))))
+			return (0);
+		s2[0] = '\0';
+		return (s2);
+	}
+	if (ft_strlen(s) > len)
+		i = len + 1;
+	else
+		i = ft_strlen(s) + 1;
+	if (!(s2 = (char *)malloc(i)))
+		return (0);
+	i = -1;
+	while (s[++i + start] && i != (unsigned int)len)
+		s2[i] = s[i + start];
+	s2[i] = '\0';
+	free(s);
 	return (s2);
 }
 
